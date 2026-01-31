@@ -15,7 +15,14 @@ pub fn fibonacci(n: u32) -> u32 {
     //
     // Hint: use a `Vec` to memoize the results you have already calculated
     // so that you don't have to recalculate them several times.
-    todo!()
+    let mut cur = 0;
+    let mut next = 1;
+
+    for i in 0..n {
+        (cur, next) = (next, cur + next);
+    }
+
+    cur
 }
 
 #[cfg(test)]
